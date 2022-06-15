@@ -1,2 +1,3 @@
-# onit-iiif-harvest
-Utilities and scripts for harvesting &amp; processing ÖNB IIIF manifests
+# ONiT IIIF Harvesting
+
+Utilities and scripts for harvesting & processing ÖNB IIIF manifests.

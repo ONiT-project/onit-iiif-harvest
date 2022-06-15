@@ -1,0 +1,17 @@
+{
+  "name": "harvest-manifests",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Harvesting script for IIIF collection manifests (one per work)",
+  "main": "src/index.js",
+  "scripts": {
+    "harvest": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.2.6",
+    "papaparse": "^5.3.2"
+  }
+}
