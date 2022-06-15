@@ -57,10 +57,17 @@ export const harvestImages = async (barcode, manifestPath, imageDir) => {
           })
         }))
         .then(() => {
-          if ((idx + 1) < images.length) {
+          if ((idx + 1) < images.length)
             return new Promise(r => setTimeout(r, WAIT_MS))
               .then(() => harvestOne(idx + 1));
-          }
+        })
+        .catch(error => {
+          console.error('Error downloading ' + fullImageUrl);
+          console.log(error);
+
+          if ((idx + 1) < images.length)
+            return new Promise(r => setTimeout(r, WAIT_MS))
+              .then(() => harvestOne(idx + 1));
         })
     }
   }
