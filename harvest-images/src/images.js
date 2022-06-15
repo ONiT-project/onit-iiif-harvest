@@ -32,7 +32,14 @@ export const harvestImages = async (barcode, manifestPath, imageDir) => {
         return harvestOne(idx + 1);
     } else {
       console.log(`Downloading ${label} (${idx + 1}/${images.length})`);
-      return fetch(fullImageUrl)
+
+      const controller = new AbortController()
+      const signal = controller.signal
+      setTimeout(() => { 
+        controller.abort()
+      }, 10000)
+
+      return fetch(fullImageUrl, { signal })
         .then(response => new Promise(resolve => {
           const fileStream = fs.createWriteStream(filename + '.download');
           response.body.pipe(fileStream);
