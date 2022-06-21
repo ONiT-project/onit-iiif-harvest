@@ -1,0 +1,17 @@
+{
+  "name": "harvest-texts",
+  "version": "0.1.0",
+  "description": "Harvesting script for plaintexts linked with IIIF presentation manifests",
+  "main": "src/index.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "harvest": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@allmaps/iiif-parser": "^1.0.0-alpha.16",
+    "node-fetch": "^3.2.6"
+  }
+}

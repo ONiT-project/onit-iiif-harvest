@@ -78,7 +78,7 @@ export const harvestImages = async (barcode, manifestPath, imageDir) => {
       }
     });
 
-    const responses = await Promise.all(nextBatch);
+    await Promise.all(nextBatch);
 
     if (startIdx + parallelism + 1 < images.length) {
       // Insert a small wait
