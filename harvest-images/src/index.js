@@ -2,8 +2,8 @@ import fs from 'fs';
 
 import { harvestImages } from "./images.js";
 
-const MANIFEST_FOLDER = '../data/manifests/D16/';
-const IMAGE_FOLDER = '../data/images/D16/'
+const MANIFEST_FOLDER = '../data/manifests/D17/';
+const IMAGE_FOLDER = '../data/images/D17/'
 
 const files = fs.readdirSync(MANIFEST_FOLDER);
 
