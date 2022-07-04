@@ -2,8 +2,8 @@ import fs from 'fs';
 
 import { harvestTexts } from "./texts.js";
 
-const MANIFEST_FOLDER = '../data/manifests/D16/';
-const TEXT_FOLDER = '../data/texts/D16/';
+const MANIFEST_FOLDER = '../data/manifests/D17/';
+const TEXT_FOLDER = '../data/texts/D17/';
 
 const files = fs.readdirSync(MANIFEST_FOLDER);
 

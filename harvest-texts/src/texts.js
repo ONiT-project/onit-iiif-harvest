@@ -97,7 +97,8 @@ export const harvestTexts = async (barcode, manifestPath, textDir) => {
             console.error('Error downloading ' + url);
             console.log(error);
 
-            fs.unlinkSync(filename + '.download');
+            if (fs.existsSync(filename + '.download'))
+              fs.unlinkSync(filename + '.download');
 
             return new Promise(resolve => resolve());
           });

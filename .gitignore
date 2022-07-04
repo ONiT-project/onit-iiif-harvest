@@ -1,4 +1,6 @@
+.ipynb_checkpoints
 node_modules
 data/manifests/*
 data/images/*
 data/texts/*
+data/models/*
