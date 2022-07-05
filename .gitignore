@@ -1,7 +1,8 @@
 .ipynb_checkpoints
 node_modules
-data/manifests/*
-data/images/*
+data/clipped/*
 data/detections/*
-data/texts/*
+data/images/*
+data/manifests/*
 data/models/*
+data/texts/*

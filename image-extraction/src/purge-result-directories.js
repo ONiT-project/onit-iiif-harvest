@@ -22,7 +22,7 @@ folders.forEach(folder => {
 
     if (!hasIllustrations) {
       // Detections were in the 'images' folder - but we want to delete from 'detections'
-      const detectionImage = record.filename.replace('data/images', 'data/detections')
+      const detectionImage = record.filename.replace('data/images', 'data/detections');
       console.log('Deleting', detectionImage);
       fs.unlinkSync(detectionImage);
     }

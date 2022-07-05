@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Helpers to process the results of AI image extraction",
   "scripts": {
-    "purge": "node src/purge-result-directories.js"
+    "purge": "node src/purge-result-directories.js",
+    "clip": "node src/clip-images.js"
   }
 }
