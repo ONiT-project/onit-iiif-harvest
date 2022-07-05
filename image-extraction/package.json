@@ -1,0 +1,10 @@
+{
+  "name": "image-extraction",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Helpers to process the results of AI image extraction",
+  "scripts": {
+    "purge": "node src/purge-result-directories.js"
+  }
+}
