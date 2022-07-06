@@ -4,7 +4,7 @@
  */
 import fs from 'fs';
  
-const DETECTIONS_FOLDER = '../data/detections/D16/';
+const DETECTIONS_FOLDER = '../data/detections/D17/';
  
 const folders = fs.readdirSync(DETECTIONS_FOLDER);
 
@@ -24,7 +24,11 @@ folders.forEach(folder => {
       // Detections were in the 'images' folder - but we want to delete from 'detections'
       const detectionImage = record.filename.replace('data/images', 'data/detections');
       console.log('Deleting', detectionImage);
-      fs.unlinkSync(detectionImage);
+      try {
+        fs.unlinkSync(detectionImage);
+      } catch {
+        //
+      }
     }
   });
 });

@@ -5,7 +5,7 @@
 import fs from 'fs';
 import { exec } from 'child_process';
 
-const DETECTIONS_FOLDER = '../data/detections/D16/';
+const DETECTIONS_FOLDER = '../data/detections/D17/';
  
 const folders = fs.readdirSync(DETECTIONS_FOLDER);
 
