@@ -1,0 +1,9 @@
+{
+  "name": "housekeeping",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "rename-files": "node src/rename-files.js"
+  }
+}
