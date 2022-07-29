@@ -3,9 +3,9 @@ import fs from 'fs';
 import Papa from 'papaparse';
 
 const WAIT_MS = 500;
-const TARGET_DIR = '../data/manifests/D18/';
+const TARGET_DIR = '../data/manifests/D19/';
 
-const str = fs.readFileSync('../data/metadata/TravelogueD18_Osman_15-07-2022-DG.csv', 'utf8');
+const str = fs.readFileSync('../data/metadata/ALMAresults_ONiTD19.csv', 'utf8');
 
 const csv = Papa.parse(str, { header: true });
 
