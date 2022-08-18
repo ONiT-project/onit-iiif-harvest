@@ -4,32 +4,39 @@
  */
 import fs from 'fs';
  
-const DETECTIONS_FOLDER = '../data/detections/D17/';
+const DETECTIONS_FOLDER = '../data/detections/D19/';
  
 const folders = fs.readdirSync(DETECTIONS_FOLDER);
 
 folders.forEach(folder => {
-  const str = fs.readFileSync(`${DETECTIONS_FOLDER}${folder}/metadata.json`, 'utf8');
-  const metadata = JSON.parse(str);
+  const filename = `${DETECTIONS_FOLDER}${folder}/metadata.json`;
 
-  const totalImages = metadata.length;
-  const imagesWithIllustration = metadata.filter(m => m.early_printed_illustrations.length > 0).length;
+  if (fs.existsSync(filename)) {
+    const str = fs.readFileSync(`${DETECTIONS_FOLDER}${folder}/metadata.json`, 'utf8');
+    const metadata = JSON.parse(str);
 
-  console.log(`Purging ${folder}: ${totalImages} images, ${imagesWithIllustration} with illustrations`);
+    const totalImages = metadata.length;
+    const imagesWithIllustration = metadata.filter(m => m.early_printed_illustrations.length > 0).length;
 
-  metadata.forEach(record => {    
-    const hasIllustrations = record.early_printed_illustrations.length > 0; 
+    console.log(`Purging ${folder}: ${totalImages} images, ${imagesWithIllustration} with illustrations`);
 
-    if (!hasIllustrations) {
-      // Detections were in the 'images' folder - but we want to delete from 'detections'
-      const detectionImage = record.filename.replace('data/images', 'data/detections');
-      console.log('Deleting', detectionImage);
-      try {
-        fs.unlinkSync(detectionImage);
-      } catch {
-        //
+    metadata.forEach(record => {    
+      const hasIllustrations = record.early_printed_illustrations.length > 0; 
+
+      if (!hasIllustrations) {
+        // Detections were in the 'images' folder - but we want to delete from 'detections'
+        const detectionImage = record.filename.replace('data/images', 'data/detections');
+        console.log('Deleting', detectionImage);
+        try {
+          fs.unlinkSync(detectionImage);
+        } catch {
+          //
+        }
       }
-    }
-  });
+    });
+  } else {
+    console.log(`metadata.json not found for ${folder} - deleting`);
+    fs.rmSync(`${DETECTIONS_FOLDER}${folder}`, { recursive: true });
+  }
 });
 
